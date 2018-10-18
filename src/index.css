@@ -5,10 +5,6 @@ body {
   margin: 0;
 }
 
-.asd{
-  text-indent: 10px;
-}
-
 .MuiListItem-root-138{
   padding: 0!important;
 }
@@ -23,6 +19,9 @@ button.icon {
   width: 39px;
   padding: 0;
 }
+.todo button.icon{
+  top: -5px;
+}
 
 
 input {
@@ -33,6 +32,7 @@ input {
   border-radius: 2px;
   border: 1px solid lightgray;
   outline: none;
+  text-indent: 10px;
 }
 
 main {
@@ -47,26 +47,25 @@ header {
   display: flex;
   align-items: center;
   padding: 0 1rem;
-  color: white;
-  background-color: #f0db4f;
   text-align: center;
 }
 
 header h1 {
   display: inline-block;
-  color: #323330;
+  color: #fff;
   margin: 1rem auto;
 }
 
 .todo {
   display: flex;
   font-size: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
   transition: all 0.2s;
   -webkit-user-select: none;
   user-select: none;
   padding: 1em;
+  padding-bottom: .5em;
   align-items: center;
 }
 
@@ -117,10 +116,29 @@ header h1 {
   transition: all 0.2s;
 }
 
-#todo-form input:focus {
-  border: 1px solid #f0db4f;
-}
-
 #todo-form button {
   margin-left: 10px;
+}
+
+.stopwatch{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stopwatch button.icon{
+  left: -15px;
+}
+
+.edit-input{
+  margin: 14px;
+  margin-bottom: 10px;
+}
+
+.todo-edit-form button.icon{
+  top: 12px;
+  left: -10px;
+}
+
+.todo-edit-form > div {
+  border-bottom: 1px solid lightgray
 }

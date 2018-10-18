@@ -1,5 +1,4 @@
 import { ADD_TODO, DELETE_TODO, TOGGLE_TODO, EDIT_TODO, SET_TASKS } from '../actions';
-
 import { combineReducers } from 'redux';
 
 function todoReducer(state = {}, action) {
@@ -27,6 +26,9 @@ function todoReducer(state = {}, action) {
       if (state.id === action.id) {
         state.title = action.title;
       }
+      return state;
+
+    default:
       return state;
   }
 }

@@ -1,27 +1,17 @@
 import * as firebase from 'firebase';
 import uuid from 'uuid/v4';
 
-// import { DB_CONFIG } from '../Config/config';
-import { store } from '../index';
 export const ADD_TODO = 'ADD_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const EDIT_TODO = 'EDIT_TODO';
 export const SET_TASKS = 'SET_TASKS';
 
-// export const SAMPLE_REQUEST = 'SAMPLE_REQUEST';
-// export const SAMPLE_RESPONSE = 'SAMPLE_RESPONSE';
-// export const SAMPLE_ERROR_RESPONSE = 'SAMPLE_ERROR_RESPONSE';
-
-// let nextId = 1
-
 export function addTodo(task) {
 
   return {
     type: ADD_TODO,
-    // id: nextId++,
     task,
-    // id,
   };
 }
 export function addTask(task) {

@@ -55,7 +55,7 @@ class Todo extends React.Component {
       <form className="todo-edit-form" onSubmit={this.handleSubmit}>
         <Grid container>
           <Grid item xs={10}>
-            <input type="text" ref="title" defaultValue={this.props.title} />
+            <input className="edit-input" type="text" ref="title" defaultValue={this.props.title} />
           </Grid>
           <Grid item xs={2}>
            <Button className="save icon" icon="save" type="submit" />

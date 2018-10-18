@@ -1,6 +1,5 @@
 // import React from 'react';
 import { connect } from 'react-redux';
-
 import Form from '../components/Form';
 import { addTask } from '../actions';
 
