@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import List from '../components/List';
+import ListOfTodos from '../components/ListOfTodos';
 import {
   deleteTodo,
   toggleTodo,
-  editTodoInBase,
+  editTodoInFirebase,
   getTasks,
 } from '../actions';
 
@@ -19,10 +19,13 @@ function mapDispatchToProps(dispatch) {
   return {
     onDelete: id => dispatch(deleteTodo(id)),
     onToggle: id => dispatch(toggleTodo(id)),
-    onEdit: (id, task) => dispatch(editTodoInBase(id, task))
+    onEdit: (todo) => dispatch(editTodoInFirebase(todo))
   };
 }
 
-const ListContainer = connect(mapStateToProps, mapDispatchToProps)(List);
+const ListOfTodosContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ListOfTodos);
 
-export default ListContainer;
+export default ListOfTodosContainer;

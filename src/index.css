@@ -5,7 +5,7 @@ body {
   margin: 0;
 }
 
-.MuiListItem-root-138{
+li{
   padding: 0!important;
 }
 
@@ -23,120 +23,71 @@ button.icon {
   top: -5px;
 }
 
-
-input {
-  font-family: "Consolas", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  color: #757575;
-  padding: 0.5em;
-  border-radius: 2px;
-  border: 1px solid lightgray;
-  outline: none;
-  text-indent: 10px;
-}
-
 main {
   background: #fff;
-  width: 700px;
+  width: 60vw;
+  /* width: 700px; */
   margin: 70px auto;
   border-radius: 2px;
   overflow: hidden;
+}
+@media screen and (max-width: 921px) {
+  main{
+    width: 100%;
+  }
 }
 
 header {
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 14px;
   text-align: center;
 }
 
 header h1 {
   display: inline-block;
   color: #fff;
-  margin: 1rem auto;
+  margin: 15px auto;
 }
 
 .todo {
   display: flex;
-  font-size: 1rem;
+  font-size: 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
   transition: all 0.2s;
-  -webkit-user-select: none;
   user-select: none;
-  padding: 1em;
-  padding-bottom: .5em;
+  padding: 16px 0px 4px 16px;
   align-items: center;
-}
-
-.todo .checkbox {
-  margin-right: 0.5rem;
-}
-
-.todo-item .title,
-.todo-item .textfield {
-  margin-right: auto;
 }
 
 .todo.completed .todo-title {
   text-decoration: line-through;
 }
 
-.todo-item.editing .title {
-  display: none;
+.todo span{
+  padding: 0;
 }
 
-.todo-item .textfield {
-  display: none;
-}
-
-.todo-item.editing .textfield {
-  display: block;
-}
-
-.todo-item button {
-  opacity: 0;
-  transition: all 0.2s;
-}
-
-.todo-item:hover button:not(.checkbox) {
-  opacity: 1;
-}
-
-#todo-form {
-  display: flex;
-  background-color: #fafafa;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 10px;
-}
-
-#todo-form input {
-  flex: 1;
-  outline: none;
-  transition: all 0.2s;
-}
-
-#todo-form button {
-  margin-left: 10px;
-}
-
-.stopwatch{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.stopwatch button.icon{
-  left: -15px;
+.todo-form input {
+ text-indent: 10px;
 }
 
 .edit-input{
   margin: 14px;
   margin-bottom: 10px;
+  font-size: 14px;
+  color: #757575;
+  padding: 7px;
+  border-radius: 2px;
+  border: 1px solid lightgray;
+  outline: none;
+  text-indent: 10px;
 }
 
 .todo-edit-form button.icon{
   top: 12px;
-  left: -10px;
+  left: 2px;
 }
 
 .todo-edit-form > div {

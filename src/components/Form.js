@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import Grid from '@material-ui/core/Grid';
@@ -11,8 +12,6 @@ class Form extends React.Component {
       title: ''
     };
 
-    this.store = this.props.store;
-
   }
  
   handleSubmit = (event) => {
@@ -20,7 +19,7 @@ class Form extends React.Component {
     let title = this.state.title;
 
     if (title) {
-      this.props.onAdd(title);
+      this.props.onTodoAdd(title);
       this.setState({ title: '' });
     }
   }
@@ -43,7 +42,10 @@ class Form extends React.Component {
         </Grid>
       </form>;
   }
+}
 
+Form.propTypes = {
+  onAdd: PropTypes.func
 }
 
 export default Form;

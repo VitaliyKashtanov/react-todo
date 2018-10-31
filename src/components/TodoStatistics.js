@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
@@ -8,7 +10,7 @@ function Stats(props) {
   let notCompleted = total - completed;
 
   return (
-    <List >
+    <List>
       <ListItem>
         <div>Всего задач: {total}</div>
       </ListItem>
@@ -21,5 +23,9 @@ function Stats(props) {
     </List>
   );
 }
+
+Stats.propTypes = {
+  todos: PropTypes.array
+};
 
 export default Stats;

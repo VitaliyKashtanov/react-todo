@@ -1,34 +1,28 @@
 import * as firebase from 'firebase';
-import uuid from 'uuid/v4';
 
-export const ADD_TODO = 'ADD_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const EDIT_TODO = 'EDIT_TODO';
-export const SET_TASKS = 'SET_TASKS';
+export const RENDER_TASKS = 'RENDER_TASKS';
 
-export function addTodo(task) {
-
-  return {
-    type: ADD_TODO,
-    task,
-  };
-}
 export function addTask(task) {
   return dispatch => {
-    const id = uuid();
+    const id = firebase
+      .database()
+      .ref(`todos/`)
+      .push().key;
     firebase
       .database()
       .ref(`todos/${id}`)
-      .set({ task, id })
+      .set({ task, id, completed: false })
       .then(() => dispatch(getTasks()));
   };
 }
 
-export function setTasks(tasks) {
+export function renderTasks(tasks) {
   return {
-    type: SET_TASKS,
     tasks,
+    type: RENDER_TASKS,
   };
 }
 
@@ -38,33 +32,33 @@ export function deleteTodo(id) {
     .ref(`todos/${id}`)
     .remove();
   return {
-    type: DELETE_TODO,
     id,
+    type: DELETE_TODO,
   };
 }
 
 export function toggleTodo(id) {
   return {
-    type: TOGGLE_TODO,
     id,
+    type: TOGGLE_TODO,
   };
 }
 
-export function editTodoInBase(id, task) {
+export function editTodoInFirebase(todo) {
   return dispatch => {
     firebase
       .database()
-      .ref(`todos/${id}`)
-      .update({ task })
+      .ref(`todos/${todo.id}`)
+      .update( todo )
       .then(() => dispatch(getTasks()));
   }
 }
 
 export function editTodo(id, title) {
   return {
-    type: EDIT_TODO,
     id,
     title,
+    type: EDIT_TODO,
   };
 }
 
@@ -87,6 +81,6 @@ export function getTasks() {
           tasks.push(task);
         });
       })
-      .then(() => dispatch(setTasks(tasks)));
+      .then(() => dispatch(renderTasks(tasks)));
   };
 }

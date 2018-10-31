@@ -8,8 +8,7 @@ import App from './App';
 import thunk from 'redux-thunk';
 import reduxLogger from 'redux-logger';
 import * as firebase from 'firebase';
-import { DB_CONFIG } from './Config/config';
-import registerServiceWorker from './registerServiceWorker';
+import { DB_CONFIG } from './config';
 
 export const store = createStore(reducer, applyMiddleware(thunk, reduxLogger));
 firebase.initializeApp(DB_CONFIG);
@@ -19,4 +18,3 @@ ReactDOM.render(
     <App />
   </Provider>,
    document.getElementById('root'));
-registerServiceWorker();

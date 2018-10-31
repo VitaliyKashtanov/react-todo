@@ -2,14 +2,15 @@ import React from 'react';
 
 import HeaderContainer from './containers/HeaderContainer';
 import FormContainer from './containers/FormContainer';
-import ListContainer from './containers/ListContainer';
+import ListOfTodosContainer from './containers/ListOfTodosContainer';
 
 const App = () => (
   <main>
     <HeaderContainer />
-    <ListContainer />
+    <ListOfTodosContainer />
     <FormContainer />
   </main>
 );
+
 
 export default App;

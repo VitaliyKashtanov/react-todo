@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Todo from './Todo';
 
-function List(props) {
+function ListOfTodos(props) {
 
   return (
     <section className="todo-list">
@@ -21,4 +22,17 @@ function List(props) {
   );
 }
 
-export default List;
+ListOfTodos.propTypes = {
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      completed: PropTypes.bool,
+    }),
+  ),
+  onDelete: PropTypes.func,
+  onToggle: PropTypes.func,
+  onEdit: PropTypes.func,
+};
+
+export default ListOfTodos;
